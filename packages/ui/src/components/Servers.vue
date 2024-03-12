@@ -27,10 +27,10 @@
                       :to="{ name: 'server-edit' }"
                       :disabled="isOffline(item.virtualserver_status)"
                     >
-                      <v-list-item-title> Edit Server </v-list-item-title>
+                      <v-list-item-title> 修改 </v-list-item-title>
                     </v-list-item>
                     <v-list-item @click="openDeleteDialog(item)">
-                      <v-list-item-title> Delete Server </v-list-item-title>
+                      <v-list-item-title> 删除 </v-list-item-title>
                     </v-list-item>
                   </v-list>
                 </v-menu>
@@ -73,30 +73,30 @@
 
     <v-dialog v-model="stopDialog" max-width="500px">
       <v-card>
-        <v-card-title>Stop Server</v-card-title>
+        <v-card-title>停止服务器</v-card-title>
         <v-card-text>
-          Do really want to stop this virtual server instance?
+          确定停止此服务器?
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn text @click="stopDialog = false" color="primary">Cancel</v-btn>
-          <v-btn text @click="stopServer" color="primary">Stop</v-btn>
+          <v-btn text @click="stopDialog = false" color="primary">取消</v-btn>
+          <v-btn text @click="stopServer" color="primary">停止</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
 
     <v-dialog v-model="deleteDialog" max-width="500px">
       <v-card>
-        <v-card-title>Delete Server</v-card-title>
+        <v-card-title>删除服务器</v-card-title>
         <v-card-text>
-          Do really want to delete this virtual server instance?
+          确定删除此服务器?
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn text @click="deleteDialog = false" color="primary"
-            >Cancel</v-btn
+            >取消</v-btn
           >
-          <v-btn text @click="deleteServer" color="primary">Delete</v-btn>
+          <v-btn text @click="deleteServer" color="primary">删除</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -150,33 +150,33 @@ export default {
           sortable: false,
         },
         {
-          text: "Select",
+          text: "选择",
           align: "start",
           value: "selected_sid",
           sortable: false,
         },
         {
-          text: "Name",
+          text: "名称",
           value: "virtualserver_name",
           sortable: false,
         },
         {
-          text: "Port",
+          text: "端口",
           value: "virtualserver_port",
           sortable: false,
         },
         {
-          text: "Clients",
+          text: "连接数",
           value: "virtualserver_clientsonline_maxclients",
           sortable: false,
         },
         {
-          text: "Uptime (d:h:m:s)",
+          text: "上线时间 (d:h:m:s)",
           value: "virtualserver_uptime",
           sortable: false,
         },
         {
-          text: "Status",
+          text: "状态",
           value: "virtualserver_status",
           sortable: false,
         },

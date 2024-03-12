@@ -10,7 +10,7 @@
               @click="openDeleteDialog(selectedTableItems)"
             >
               <v-icon left>delete</v-icon>
-              Remove
+              删除
             </v-btn>
           </v-card-title>
           <v-card-text>
@@ -34,10 +34,10 @@
                   </template>
                   <v-list>
                     <v-list-item @click="openDeleteDialog([item])">
-                      <v-list-item-title> Delete Token </v-list-item-title>
+                      <v-list-item-title> 删除Token </v-list-item-title>
                     </v-list-item>
                     <v-list-item @click="copyToClipboard(item.token)">
-                      <v-list-item-title> Copy Token </v-list-item-title>
+                      <v-list-item-title> 复制Token </v-list-item-title>
                     </v-list-item>
                   </v-list>
                 </v-menu>
@@ -52,12 +52,12 @@
 
       <v-dialog v-model="dialog" max-width="500px">
         <v-card>
-          <v-card-title> Delete Token </v-card-title>
-          <v-card-text> Do you really want to delete this token? </v-card-text>
+          <v-card-title> 删除Token </v-card-title>
+          <v-card-text> 确定删除此token? </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn text color="primary" @click="dialog = false">No</v-btn>
-            <v-btn text color="primary" @click="deleteToken">Yes</v-btn>
+            <v-btn text color="primary" @click="dialog = false">取消</v-btn>
+            <v-btn text color="primary" @click="deleteToken">确定</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -86,11 +86,11 @@ export default {
       headers: [
         { text: "", value: "actions", align: "start", sortable: false },
         { text: "Privilege Key", value: "token" },
-        { text: "Type", value: "token_type" },
-        { text: "Group", value: "token_id1" },
-        { text: "Channel", value: "token_id2" },
-        { text: "Created", value: "token_created" },
-        { text: "Description", value: "token_description" },
+        { text: "类型", value: "token_type" },
+        { text: "分组", value: "token_id1" },
+        { text: "频道", value: "token_id2" },
+        { text: "创建", value: "token_created" },
+        { text: "描述", value: "token_description" },
       ],
       rowsPerPage: [25, 50, 75, -1],
       selectedTableItems: [],
@@ -127,7 +127,7 @@ export default {
     copyToClipboard(token) {
       this.$clipboard(token);
 
-      this.$toast.info("Token Copied To Clipboard");
+      this.$toast.info("Token复制到剪贴板");
     },
     async init() {
       try {

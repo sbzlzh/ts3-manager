@@ -42,32 +42,32 @@
 
             <v-text-field
               v-else
-              label="Name"
+              label="名称"
               v-model="channelName"
               :disabled="$store.state.query.loading"
             >
             </v-text-field>
 
             <v-text-field
-              type="password"
+              type="密码"
               label="Password"
               v-model="channelPassword"
               :disabled="$store.state.query.loading"
             ></v-text-field>
             <v-text-field
-              label="Topic"
+              label="主题"
               v-model="channelTopic"
               :disabled="$store.state.query.loading"
             ></v-text-field>
             <v-textarea
-              label="Description"
+              label="描述"
               v-model="channelDescription"
               :disabled="$store.state.query.loading"
             ></v-textarea>
             <v-expansion-panels accordion flat>
               <v-expansion-panel>
                 <v-expansion-panel-header>
-                  More Options
+                  更多选项
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <v-card outlined>
@@ -76,54 +76,54 @@
                         <v-flex xs12>
                           <v-autocomplete
                             :items="channelOrderSelection"
-                            label="Sort This Channel After"
+                            label="将此频道排序"
                             v-model="selectedChannelOrder"
                             :disabled="$store.state.query.loading"
                           ></v-autocomplete>
                         </v-flex>
                         <v-flex md4>
                           <v-radio-group
-                            label="Max Users"
+                            label="最大用户数"
                             v-model="channelUnlimitedClients"
                           >
-                            <v-radio label="Unlimited" :value="1"></v-radio>
-                            <v-radio label="Limited" :value="0"></v-radio>
+                            <v-radio label="无限" :value="1"></v-radio>
+                            <v-radio label="有限" :value="0"></v-radio>
                           </v-radio-group>
                           <v-text-field
-                            label="Number Of Clients"
+                            label="用户数"
                             v-model="channelMaxClients"
                             :disabled="!!channelUnlimitedClients"
                           ></v-text-field>
                         </v-flex>
                         <v-flex md4>
                           <v-radio-group
-                            label="Channel Type"
+                            label="频道类型"
                             v-model="channelType"
                           >
                             <v-radio
-                              label="Temporary"
+                              label="临时"
                               value="temporary"
                             ></v-radio>
                             <v-radio
-                              label="Permanent"
+                              label="永久"
                               value="permanent"
                             ></v-radio>
                             <v-radio
-                              label="Semi-Permanent"
+                              label="有限"
                               value="semi-permanent"
                             ></v-radio>
                           </v-radio-group>
                         </v-flex>
                         <v-flex md4>
                           <v-checkbox
-                            label="Default Channel"
+                            label="是否为默认频道"
                             v-model="channelIsDefault"
                             :disabled="!!initChannelData.channel_flag_default"
                           ></v-checkbox>
                         </v-flex>
                         <v-flex md4>
                           <v-checkbox
-                            label="Voice Data encrypted"
+                            label="语音数据加密"
                             v-model="channelIsUnencrypted"
                           ></v-checkbox>
                         </v-flex>
@@ -142,16 +142,16 @@
               @click="save"
               :disabled="this.$store.state.query.loading"
               color="primary"
-              >OK</v-btn
+              >确定</v-btn
             >
-            <v-btn text @click="$router.go(-1)" color="primary">Cancel</v-btn>
+            <v-btn text @click="$router.go(-1)" color="primary">取消</v-btn>
             <v-btn
               text
               @click="save"
               :disabled="this.$store.state.query.loading"
               color="primary"
               :class="{ 'd-none': !applyButton }"
-              >Apply</v-btn
+              >提交</v-btn
             >
           </v-card-actions>
         </v-card>

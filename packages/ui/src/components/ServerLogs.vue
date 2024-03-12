@@ -37,14 +37,14 @@
                 <v-select
                   :items="timezones"
                   v-model="selectedTimezone"
-                  label="Timestamp"
+                  label="时间戳"
                 ></v-select>
               </v-col>
               <v-col cols="12" sm="6" xl="4">
-                <v-text-field label="Filter" v-model="filter"></v-text-field>
+                <v-text-field label="过滤" v-model="filter"></v-text-field>
               </v-col>
               <v-col cols="12" xl="1">
-                <v-btn color="primary" @click="reloadLogView">Reload</v-btn>
+                <v-btn color="primary" @click="reloadLogView">重载</v-btn>
               </v-col>
             </v-row>
           </v-card-title>
@@ -83,22 +83,22 @@ export default {
       filter: "",
       headers: [
         {
-          text: "Timestamp",
+          text: "时间",
           value: "timestamp",
           sortable: false,
         },
         {
-          text: "Level",
+          text: "等级",
           value: "level",
           sortable: false,
         },
         {
-          text: "Channel",
+          text: "频道",
           value: "channel",
           sortable: false,
         },
         {
-          text: "Message",
+          text: "消息",
           value: "msg",
           sortable: false,
         },
@@ -118,11 +118,11 @@ export default {
       selectedTimezone: "local",
       timezones: [
         {
-          text: "UTC Time",
+          text: "UTC时间",
           value: "utc",
         },
         {
-          text: "Locale Time",
+          text: "本地时间",
           value: "local",
         },
       ],

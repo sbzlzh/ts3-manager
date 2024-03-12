@@ -5,7 +5,7 @@
         <v-card>
           <v-list>
             <template v-if="regularGroups.length">
-              <v-subheader>Regular Groups</v-subheader>
+              <v-subheader>常规组</v-subheader>
               <v-list-item
                 v-for="regularGroup in regularGroups"
                 :key="regularGroup.sgid || regularGroup.cgid"
@@ -25,13 +25,13 @@
                     </template>
                     <v-list>
                       <v-list-item @click="editGroup(regularGroup)">
-                        <v-list-item-title> Edit Group </v-list-item-title>
+                        <v-list-item-title> 编辑组 </v-list-item-title>
                       </v-list-item>
                       <v-list-item @click="openCopyDialog(regularGroup)">
-                        <v-list-item-title> Copy Group </v-list-item-title>
+                        <v-list-item-title> 复制组 </v-list-item-title>
                       </v-list-item>
                       <v-list-item @click="confirmDeletion(regularGroup)">
-                        <v-list-item-title> Delete Group </v-list-item-title>
+                        <v-list-item-title> 删除组 </v-list-item-title>
                       </v-list-item>
                     </v-list>
                   </v-menu>
@@ -42,7 +42,7 @@
             </template>
 
             <template v-if="templateGroups.length">
-              <v-subheader>Template Groups</v-subheader>
+              <v-subheader>模板组</v-subheader>
               <v-list-item
                 v-for="templateGroup in templateGroups"
                 :key="templateGroup.sgid || templateGroup.cgid"
@@ -66,13 +66,13 @@
                     </template>
                     <v-list>
                       <v-list-item @click="editGroup(templateGroup)">
-                        <v-list-item-title> Edit Group </v-list-item-title>
+                        <v-list-item-title> 编辑组 </v-list-item-title>
                       </v-list-item>
                       <v-list-item @click="openCopyDialog(templateGroup)">
-                        <v-list-item-title> Copy Group </v-list-item-title>
+                        <v-list-item-title> 复制组 </v-list-item-title>
                       </v-list-item>
                       <v-list-item @click="confirmDeletion(templateGroup)">
-                        <v-list-item-title> Delete Group </v-list-item-title>
+                        <v-list-item-title> 删除组 </v-list-item-title>
                       </v-list-item>
                     </v-list>
                   </v-menu>
@@ -83,7 +83,7 @@
             <template v-if="serverQueryGroups.length">
               <v-divider></v-divider>
 
-              <v-subheader>ServerQuery Groups</v-subheader>
+              <v-subheader>服务器查询组</v-subheader>
               <v-list-item
                 v-for="serverQueryGroup in serverQueryGroups"
                 :key="serverQueryGroup.sgid || serverQueryGroup.cgid"
@@ -107,13 +107,13 @@
                     </template>
                     <v-list>
                       <v-list-item @click="editGroup(serverQueryGroup)">
-                        <v-list-item-title> Edit Group </v-list-item-title>
+                        <v-list-item-title> 编辑组 </v-list-item-title>
                       </v-list-item>
                       <v-list-item @click="openCopyDialog(serverQueryGroup)">
-                        <v-list-item-title> Copy Group </v-list-item-title>
+                        <v-list-item-title> 复制组 </v-list-item-title>
                       </v-list-item>
                       <v-list-item @click="confirmDeletion(serverQueryGroup)">
-                        <v-list-item-title> Delete Group </v-list-item-title>
+                        <v-list-item-title> 删除组 </v-list-item-title>
                       </v-list-item>
                     </v-list>
                   </v-menu>
@@ -136,28 +136,28 @@
       </v-btn>
       <v-dialog v-model="removeDialog" max-width="500px">
         <v-card>
-          <v-card-title> Confirm Delete Group </v-card-title>
+          <v-card-title> 确认删除组 </v-card-title>
           <v-card-text>
-            Please confirm deleting the group <b>{{ selectedGroup.name }}</b>
+            请确认删除组 <b>{{ selectedGroup.name }}</b>
             <v-checkbox
               v-model="forceDeletion"
-              label="Delete even if there are clients in the group"
+              label="即使组中有客户端也要删除"
             ></v-checkbox>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn text color="primary" @click="removeDialog = false"
-              >Abort</v-btn
+              >放弃</v-btn
             >
             <v-btn text color="primary" @click="removeGroup"
-              >Delete Group</v-btn
+              >删除组</v-btn
             >
           </v-card-actions>
         </v-card>
       </v-dialog>
       <v-dialog v-model="addDialog" max-width="500px">
         <v-card>
-          <v-card-title> Add Group </v-card-title>
+          <v-card-title> 添加组 </v-card-title>
           <v-card-text>
             <v-text-field v-model="groupName" label="Group Name"></v-text-field>
             <v-select
@@ -168,25 +168,25 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn text color="primary" @click="addGroup">Add</v-btn>
+            <v-btn text color="primary" @click="addGroup">添加</v-btn>
             <v-btn text color="primary" @click="addDialog = false"
-              >Cancel</v-btn
+              >取消</v-btn
             >
           </v-card-actions>
         </v-card>
       </v-dialog>
       <v-dialog v-model="copyDialog" max-width="500px">
         <v-card>
-          <v-card-title>Copy Group</v-card-title>
+          <v-card-title>复制组</v-card-title>
           <v-card-text>
             <v-select
-              label="Copy Group"
+              label="复制组"
               :items="allGroups"
               v-model="selectedGroup"
               :item-disabled="disabledSourceGroup"
               return-object
               :item-value="allGroups[0].sgid ? 'sgid' : 'cgid'"
-              item-text="name"
+              item-text="名称"
             >
               <template #item="{ item }">
                 <v-list-item-content>
@@ -199,13 +199,13 @@
             </v-select>
             <v-row class="px-3">
               <v-checkbox
-                label="Overwrite"
+                label="覆盖"
                 hide-details
                 class="mr-3 shrink"
                 v-model="overwriteGroup"
               ></v-checkbox>
               <v-select
-                label="Target Group"
+                label="常规组"
                 :disabled="!overwriteGroup"
                 :items="allGroups"
                 item-text="name"
@@ -225,13 +225,13 @@
               </v-select>
             </v-row>
             <v-text-field
-              label="Target Group Name"
+              label="常规组名"
               :disabled="overwriteGroup"
               v-model="targetGroupName"
               autofocus
             ></v-text-field>
             <v-select
-              label="Target Group Type"
+              label="常规组类型"
               :items="groupTypes"
               v-model="selectedTargetGroupType"
               :disabled="overwriteGroup"
@@ -239,9 +239,9 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn text color="primary" @click="copyGroup">OK</v-btn>
+            <v-btn text color="primary" @click="copyGroup">确定</v-btn>
             <v-btn text color="primary" @click="copyDialog = false"
-              >Cancel</v-btn
+              >取消</v-btn
             >
           </v-card-actions>
         </v-card>

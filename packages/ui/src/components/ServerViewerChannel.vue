@@ -26,7 +26,7 @@
             <v-icon>arrow_forward</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Switch to Channel </v-list-item-title>
+            <v-list-item-title> 选择频道 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item
@@ -40,7 +40,7 @@
             <v-icon>edit</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Edit Channel </v-list-item-title>
+            <v-list-item-title> 编辑频道 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item
@@ -50,7 +50,7 @@
             <v-icon>verified_user</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Channel Permissions </v-list-item-title>
+            <v-list-item-title> 频道权限 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item :to="{ name: 'channel-add', query: { pid: channel.cid } }">
@@ -58,7 +58,7 @@
             <v-icon>add</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Create Sub-Channel </v-list-item-title>
+            <v-list-item-title> 创建子频道 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item @click="confirmChannelDeletion(channel)">
@@ -66,7 +66,7 @@
             <v-icon>delete</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Delete Channel </v-list-item-title>
+            <v-list-item-title> 删除频道 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -74,9 +74,9 @@
 
     <v-dialog v-model="deleteChannelDialog" max-width="500px">
       <v-card>
-        <v-card-title>Delete Channel</v-card-title>
+        <v-card-title>删除频道</v-card-title>
         <v-card-text>
-          Do you really want to delete that channel?
+          确定删除该频道？
           <v-checkbox
             v-model="forceDeletion"
             label="Delete even if there are clients in the channel"

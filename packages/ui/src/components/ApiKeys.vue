@@ -10,7 +10,7 @@
               @click="deleteDialog = true"
             >
               <v-icon left>delete</v-icon>
-              Remove
+              删除
             </v-btn>
           </v-card-title>
           <v-card-text>
@@ -34,14 +34,14 @@
     </v-btn>
     <v-dialog v-model="deleteDialog" max-width="500px">
       <v-card>
-        <v-card-title> Delete API Key </v-card-title>
+        <v-card-title> 删除API Key </v-card-title>
         <v-card-text>
-          Do you really want to delete the selected API key(s)?
+          确定删除API key(s)?
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn text color="primary" @click="deleteDialog = false">No</v-btn>
-          <v-btn text color="primary" @click="removeApiKeys">Yes</v-btn>
+          <v-btn text color="primary" @click="deleteDialog = false">取消</v-btn>
+          <v-btn text color="primary" @click="removeApiKeys">确定</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -54,25 +54,25 @@ export default {
     return {
       headers: [
         {
-          text: "Client",
+          text: "连接",
           sortable: true,
           align: "start",
           value: "clientNickname",
         },
         {
-          text: "Scope",
+          text: "范围",
           sortable: true,
           align: "start",
           value: "scope",
         },
         {
-          text: "Created At",
+          text: "创建于",
           sortable: true,
           align: "start",
           value: "createdAt",
         },
         {
-          text: "Expires At",
+          text: "到期时间",
           sortable: true,
           align: "start",
           value: "expiresAt",

@@ -3,21 +3,20 @@
     <v-layout justify-center>
       <v-flex lg6 md8 sm8 xs12>
         <v-card>
-          <v-card-title> Backup </v-card-title>
+          <v-card-title> 备份 </v-card-title>
           <v-card-text>
-            Download a backup file which contains all the necessary data to
-            restore the virtual server
+            下载一个备份文件，其中包含恢复虚拟服务器所需的所有数据
           </v-card-text>
           <v-card-actions>
             <v-btn color="primary" @click="createSnapshot">
-              Create Snapshot
+              创建备份
               <v-icon right> mdi-file-download-outline </v-icon>
             </v-btn>
           </v-card-actions>
           <v-divider></v-divider>
-          <v-card-title> Restore </v-card-title>
+          <v-card-title> 恢复 </v-card-title>
           <v-card-text>
-            Upload a backup file to restore the virtual server
+            上载备份文件以恢复虚拟服务器
           </v-card-text>
           <v-card-actions>
             <v-layout justify-space-between wrap>
@@ -30,7 +29,7 @@
                   accept=".backup"
                 />
                 <v-text-field
-                  label="Select Backup File"
+                  label="选择备份文件"
                   @click="selectFile"
                   v-model="fileName"
                   prepend-icon="attach_file"
@@ -42,7 +41,7 @@
                   :disabled="filePicked"
                   @click="deploySnapshot"
                 >
-                  Deploy Snapshot
+                  恢复备份
                   <v-icon right> mdi-file-upload-outline </v-icon>
                 </v-btn>
               </v-flex>

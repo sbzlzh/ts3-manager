@@ -21,7 +21,7 @@
             <v-icon>mdi-alert-octagram</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Poke Client </v-list-item-title>
+            <v-list-item-title> 私信 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item @click="openPrivateChat(client.clid)">
@@ -29,7 +29,7 @@
             <v-icon>send</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Open Text Chat </v-list-item-title>
+            <v-list-item-title> 打开对话 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item
@@ -39,7 +39,7 @@
             <v-icon>edit</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Edit Client </v-list-item-title>
+            <v-list-item-title> 编辑连接 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item @click="openKickDialog(4)">
@@ -47,7 +47,7 @@
             <v-icon>forward</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Kick Client from Channel </v-list-item-title>
+            <v-list-item-title> 移出频道 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item @click="openKickDialog(5)">
@@ -55,7 +55,7 @@
             <v-icon>forward</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Kick Client from Server </v-list-item-title>
+            <v-list-item-title> 移出服务器 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item
@@ -68,7 +68,7 @@
             <v-icon>not_interested</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Ban Client </v-list-item-title>
+            <v-list-item-title> 拉黑 </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

@@ -17,7 +17,7 @@
             <v-switch v-model="showNotifications"></v-switch>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Enable Notifications</v-list-item-title>
+            <v-list-item-title>启用通知</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -25,7 +25,7 @@
       <v-list v-if="showNotifications">
         <v-list-item v-if="!countNotifications">
           <v-list-item-content>
-            <v-list-item-title>No Notifications</v-list-item-title>
+            <v-list-item-title>禁用通知</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item

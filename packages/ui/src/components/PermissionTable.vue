@@ -8,13 +8,13 @@
             <v-text-field
               v-model="filter"
               append-icon="filter_list"
-              label="Filter"
+              label="过滤"
             ></v-text-field>
           </v-flex>
           <v-flex xs12 sm2>
             <v-checkbox
               v-model="onlyGranted"
-              label="only granted"
+              label="仅授予"
               primary
             ></v-checkbox>
           </v-flex>
@@ -39,10 +39,10 @@
               </template>
               <v-list>
                 <v-list-item @click="editPermission(item)">
-                  <v-list-item-title> Edit Permission </v-list-item-title>
+                  <v-list-item-title> 编辑 </v-list-item-title>
                 </v-list-item>
                 <v-list-item @click="confirmDeletion(item)">
-                  <v-list-item-title> Remove Permission </v-list-item-title>
+                  <v-list-item-title> 删除 </v-list-item-title>
                 </v-list-item>
               </v-list>
             </v-menu>
@@ -107,8 +107,8 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn text @click="savePermission" color="primary">Save</v-btn>
-          <v-btn text @click="dialog = false" color="primary">Cancel</v-btn>
+          <v-btn text @click="savePermission" color="primary">保存</v-btn>
+          <v-btn text @click="dialog = false" color="primary">取消</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -116,14 +116,14 @@
       <v-card>
         <v-card-title>Remove Permission</v-card-title>
         <v-card-text>
-          Do you really want to remove the
-          <b>{{ editedPermission.permname }}</b> permission values?
+          确定删除
+          <b>{{ editedPermission.permname }}</b> 权限值?
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn text @click="removePermission" color="primary">Yes</v-btn>
+          <v-btn text @click="removePermission" color="primary">确定</v-btn>
           <v-btn text @click="deleteDialog = false" color="primary"
-            >Cancel</v-btn
+            >取消</v-btn
           >
         </v-card-actions>
       </v-card>
@@ -149,25 +149,25 @@ export default {
           sortable: false,
         },
         {
-          text: "Permission",
+          text: "许可",
           align: "left",
           value: "permname",
           sortable: false,
         },
         {
-          text: "Value",
+          text: "值",
           align: "left",
           value: "permvalue",
           sortable: false,
         },
         {
-          text: "Skip",
+          text: "跳过",
           align: "left",
           value: "permskip",
           sortable: false,
         },
         {
-          text: "Negate",
+          text: "失效",
           align: "left",
           value: "permnegated",
           sortable: false,

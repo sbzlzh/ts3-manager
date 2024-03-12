@@ -12,7 +12,7 @@
                   @click="openRemoveDialog(selectedTableItems)"
                 >
                   <v-icon left>delete</v-icon>
-                  Remove
+                  删除
                 </v-btn>
               </v-flex>
               <v-flex md4 sm6 xs12>
@@ -68,18 +68,18 @@
       </v-flex>
       <v-dialog max-width="500px" v-model="dialog">
         <v-card>
-          <v-card-title> Delete Client </v-card-title>
+          <v-card-title> 删除用户 </v-card-title>
           <v-card-text>
-            Do you really want to delete
+            确定删除
             <b v-if="clientRemoveList.length === 1">{{
               clientRemoveList[0].client_nickname
             }}</b>
-            <b v-else>all selected clients</b> from the list?
+            <b v-else>全选</b> from the list?
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn text @click="dialog = false" color="primary">No</v-btn>
-            <v-btn text @click="deleteClient" color="primary">Yes</v-btn>
+            <v-btn text @click="dialog = false" color="primary">取消</v-btn>
+            <v-btn text @click="deleteClient" color="primary">确定</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -99,31 +99,31 @@ export default {
           sortable: false,
         },
         {
-          text: "Last Nickname",
+          text: "最后使用的名字",
           value: "client_nickname",
         },
         {
-          text: "Unique Identifier",
+          text: "唯一标识",
           value: "client_unique_identifier",
         },
         {
-          text: "Created",
+          text: "创建时间",
           value: "client_created",
         },
         {
-          text: "Last",
+          text: "最后一次登录",
           value: "client_lastconnected",
         },
         {
-          text: "Total",
+          text: "总计",
           value: "client_totalconnections",
         },
         {
-          text: "Last IP",
+          text: "最后一次登录IP",
           value: "client_lastip",
         },
         {
-          text: "Description",
+          text: "描述",
           value: "client_description",
         },
       ],

@@ -12,13 +12,13 @@
                   @click="openDialog(selectedTableItems)"
                 >
                   <v-icon left>delete</v-icon>
-                  Remove
+                  移除
                 </v-btn>
               </v-flex>
               <v-flex md4 sm6 xs12>
                 <v-text-field
                   append-icon="search"
-                  label="Search"
+                  label="查找"
                   v-model="filter"
                 ></v-text-field>
               </v-flex>
@@ -48,10 +48,10 @@
                     <v-list-item
                       :to="{ name: 'ban-edit', params: { banid: item.banid } }"
                     >
-                      <v-list-item-title> Edit Ban </v-list-item-title>
+                      <v-list-item-title> 修改 </v-list-item-title>
                     </v-list-item>
                     <v-list-item @click="openDialog([item])">
-                      <v-list-item-title> Remove Ban </v-list-item-title>
+                      <v-list-item-title> 删除 </v-list-item-title>
                     </v-list-item>
                   </v-list>
                 </v-menu>
@@ -77,9 +77,9 @@
       </v-btn>
       <v-dialog v-model="dialog" max-width="500px">
         <v-card>
-          <v-card-title> Delete Ban </v-card-title>
+          <v-card-title> 删除 </v-card-title>
           <v-card-text>
-            Do you really want to delete the selected ban(s)?
+            是否确实要删除所选的禁令？
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -107,11 +107,11 @@ export default {
           value: "name_ip_uid",
         },
         {
-          text: "Reason",
+          text: "原因",
           value: "reason",
         },
         {
-          text: "Expires",
+          text: "有效期限",
           value: "duration",
         },
       ],

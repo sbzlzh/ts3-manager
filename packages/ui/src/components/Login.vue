@@ -9,15 +9,15 @@
               <v-layout justify-space-between wrap>
                 <v-flex xs6>
                   <v-text-field
-                    label="Server"
-                    placeholder="IP or Domain"
+                    label="服务器"
+                    placeholder="IP或者域名"
                     v-model="form.host"
                     :rules="[rules.required]"
                   ></v-text-field>
                 </v-flex>
                 <v-flex xs2>
                   <v-text-field
-                    label="Port"
+                    label="端口"
                     type="number"
                     v-model="form.queryport"
                     :rules="[rules.required]"
@@ -40,7 +40,7 @@
                 </v-flex>
                 <v-flex xs12>
                   <v-text-field
-                    label="Name"
+                    label="用户名"
                     v-model="form.username"
                     :rules="[rules.required]"
                     placeholder="e.g. serveradmin"
@@ -50,7 +50,7 @@
                 </v-flex>
                 <v-flex xs12>
                   <v-text-field
-                    label="Password"
+                    label="密码"
                     type="password"
                     v-model="form.password"
                     :rules="[rules.required]"
@@ -60,7 +60,7 @@
                 </v-flex>
                 <v-flex xs12>
                   <v-checkbox
-                    label="Remember me"
+                    label="记住信息"
                     v-model="rememberLogin"
                   ></v-checkbox>
                 </v-flex>

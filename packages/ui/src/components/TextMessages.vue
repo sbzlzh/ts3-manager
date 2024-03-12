@@ -11,7 +11,7 @@
             }"
           >
             <v-list subheader class="my-2" width="100%">
-              <v-subheader>Channels</v-subheader>
+              <v-subheader>频道</v-subheader>
               <v-list-item-group :value="selectedChannelItem">
                 <channel
                   v-for="channel in channelList"
@@ -28,7 +28,7 @@
               <v-subheader>Clients</v-subheader>
               <client
                 v-for="client in clientList"
-                :client="client"
+                :client="客户端"
                 :badgeValue="
                   countUnreadMessages({ target: client.clid, targetmode: 1 })
                 "
@@ -105,7 +105,7 @@
                 <!-- Server text message history -->
                 <v-tab-item :transition="false" :reverse-transition="false">
                   <p class="text-center text--secondary">
-                    Server Text Messages
+                    服务器文本消息
                   </p>
                   <div v-for="message in serverTextMessages">
                     <div>
@@ -124,7 +124,7 @@
                 <!-- Channel text message history -->
                 <v-tab-item :transition="false" :reverse-transition="false">
                   <p class="text-center text--secondary">
-                    Channel Text Messages
+                    频道文本消息
                   </p>
                   <div v-for="message in channelTextMessages">
                     <div>
@@ -148,7 +148,7 @@
                   :reverse-transition="false"
                 >
                   <p class="text-center text--secondary">
-                    Private Text Messages
+                    私聊文本消息
                   </p>
                   <div v-for="message in privateTextMessages">
                     <div v-if="message.target === textPrivateTab.target">
@@ -173,7 +173,7 @@
             <div>
               <v-text-field
                 :append-icon="'send'"
-                label="Send Message"
+                label="发送消息"
                 v-model="message"
                 @click:append="sendMessage"
                 @keyup="keyPressed"

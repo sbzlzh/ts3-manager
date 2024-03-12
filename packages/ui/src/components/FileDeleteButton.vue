@@ -6,14 +6,14 @@
       :disabled="!!!selectedFiles.length"
     >
       <v-icon left>delete</v-icon>
-      Remove
+      删除
     </v-btn>
 
     <v-dialog v-model="dialog" max-width="500px">
       <v-card>
         <v-card-title>Delete Selected Files/Folders</v-card-title>
         <v-card-text>
-          Do you really want to delete all selected files and folders?
+          确定删除选中的文件和文件夹？
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>

@@ -6,12 +6,12 @@
           <v-card-title>Manage Virtual Server</v-card-title>
           <v-card-text>
             <v-text-field
-              label="Server Name"
+              label="服务器名"
               v-model="serverInfo.virtualserver_name"
               :disabled="$store.state.query.loading"
             ></v-text-field>
             <v-text-field
-              label="Password"
+              label="密码"
               v-model="serverInfo.virtualserver_password"
               :disabled="$store.state.query.loading"
               type="password"
@@ -19,7 +19,7 @@
             <v-layout justify-space-between>
               <v-flex xs5>
                 <v-text-field
-                  label="Maximum Clients"
+                  label="最大连接数"
                   v-model="serverInfo.virtualserver_maxclients"
                   :disabled="$store.state.query.loading"
                   type="number"
@@ -35,7 +35,7 @@
               </v-flex>
             </v-layout>
             <v-textarea
-              label="Welcome Message"
+              label="欢迎语"
               v-model="serverInfo.virtualserver_welcomemessage"
               :disabled="$store.state.query.loading"
             ></v-textarea>
@@ -45,30 +45,30 @@
                 <v-expansion-panel-header> Host </v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <v-card outlined>
-                    <v-card-subtitle>Host Message</v-card-subtitle>
+                    <v-card-subtitle>弹出消息</v-card-subtitle>
                     <v-card-text>
                       <v-text-field
-                        label="Message"
+                        label="消息"
                         v-model="serverInfo.virtualserver_hostmessage"
                         :disabled="$store.state.query.loading"
                       ></v-text-field>
                       <v-select
-                        label="Message Mode"
+                        label="消息弹出模式"
                         v-model="serverInfo.virtualserver_hostmessage_mode"
                         :items="messageModes"
                       ></v-select>
                     </v-card-text>
                   </v-card>
                   <v-card class="mt-2" outlined>
-                    <v-card-subtitle>Host Banner</v-card-subtitle>
+                    <v-card-subtitle>横幅</v-card-subtitle>
                     <v-card-text>
                       <v-text-field
-                        label="Banner Gfx URL"
+                        label="横幅连接"
                         v-model="serverInfo.virtualserver_hostbanner_gfx_url"
                         :disabled="$store.state.query.loading"
                       ></v-text-field>
                       <v-text-field
-                        label="URL"
+                        label="跳转连接"
                         v-model="serverInfo.virtualserver_hostbanner_url"
                         :disabled="$store.state.query.loading"
                       ></v-text-field>
@@ -85,7 +85,7 @@
                         </v-flex>
                         <v-flex xs6>
                           <v-select
-                            label="Resize"
+                            label="调整"
                             :items="bannerModes"
                             v-model="serverInfo.virtualserver_hostbanner_mode"
                           ></v-select>
@@ -94,20 +94,20 @@
                     </v-card-text>
                   </v-card>
                   <v-card class="my-2" outlined>
-                    <v-card-subtitle>Host Button</v-card-subtitle>
+                    <v-card-subtitle>Host 按钮</v-card-subtitle>
                     <v-card-text>
                       <v-text-field
-                        label="Tooltip"
+                        label="提示"
                         v-model="serverInfo.virtualserver_hostbutton_tooltip"
                         :disabled="$store.state.query.loading"
                       ></v-text-field>
                       <v-text-field
-                        label="URL"
+                        label="链接"
                         v-model="serverInfo.virtualserver_hostbutton_url"
                         :disabled="$store.state.query.loading"
                       ></v-text-field>
                       <v-text-field
-                        label="Icon URL"
+                        label="Icon 链接"
                         v-model="serverInfo.virtualserver_hostbutton_gfx_url"
                         :disabled="$store.state.query.loading"
                       ></v-text-field>
@@ -119,10 +119,10 @@
                 <v-expansion-panel-header> Transfers </v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <v-card outlined>
-                    <v-card-subtitle>Upload</v-card-subtitle>
+                    <v-card-subtitle>上传</v-card-subtitle>
                     <v-card-text>
                       <v-text-field
-                        label="Bandwidth Limit"
+                        label="带宽限制"
                         v-model="
                           serverInfo.virtualserver_max_upload_total_bandwidth
                         "
@@ -134,7 +134,7 @@
                         </template>
                       </v-text-field>
                       <v-text-field
-                        label="Upload Quota"
+                        label="上传限额"
                         v-model="serverInfo.virtualserver_upload_quota"
                         :disabled="$store.state.query.loading"
                         type="number"
@@ -146,10 +146,10 @@
                     </v-card-text>
                   </v-card>
                   <v-card class="my-2" outlined>
-                    <v-card-subtitle>Download</v-card-subtitle>
+                    <v-card-subtitle>下载</v-card-subtitle>
                     <v-card-text>
                       <v-text-field
-                        label="Bandwidth Limit"
+                        label="带宽限制"
                         v-model="
                           serverInfo.virtualserver_max_download_total_bandwidth
                         "
@@ -161,7 +161,7 @@
                         </template>
                       </v-text-field>
                       <v-text-field
-                        label="Download Quota"
+                        label="下载限额"
                         v-model="serverInfo.virtualserver_download_quota"
                         :disabled="$store.state.query.loading"
                         type="number"
@@ -176,7 +176,7 @@
               </v-expansion-panel>
               <v-expansion-panel>
                 <v-expansion-panel-header>
-                  Anti-Flood
+                  攻击防范
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <v-card class="mb-2" outlined>
@@ -210,12 +210,12 @@
                 </v-expansion-panel-content>
               </v-expansion-panel>
               <v-expansion-panel>
-                <v-expansion-panel-header> Security </v-expansion-panel-header>
+                <v-expansion-panel-header> 安全 </v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <v-card class="mb-2" outlined>
                     <v-card-text>
                       <v-text-field
-                        label="Needed Security Level"
+                        label="所需安全等级"
                         v-model="
                           serverInfo.virtualserver_needed_identity_security_level
                         "
@@ -223,7 +223,7 @@
                         type="number"
                       ></v-text-field>
                       <v-select
-                        label="Channel voice data encrypption"
+                        label="频道语音数据加密"
                         v-model="serverInfo.virtualserver_codec_encryption_mode"
                         :items="encryptionModes"
                       ></v-select>
@@ -232,17 +232,17 @@
                 </v-expansion-panel-content>
               </v-expansion-panel>
               <v-expansion-panel>
-                <v-expansion-panel-header> Misc </v-expansion-panel-header>
+                <v-expansion-panel-header> 其他 </v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <v-card outlined>
-                    <v-card-subtitle>Default Groups</v-card-subtitle>
+                    <v-card-subtitle>默认组</v-card-subtitle>
                     <v-card-text>
                       <v-autocomplete
                         :items="serverGroups"
                         item-text="name"
                         item-value="sgid"
                         v-model="serverInfo.virtualserver_default_server_group"
-                        label="Server Group"
+                        label="服务器组"
                         :disabled="$store.state.query.loading"
                       >
                         <template #selection="{ item }">
@@ -257,7 +257,7 @@
                         item-text="name"
                         item-value="cgid"
                         v-model="serverInfo.virtualserver_default_channel_group"
-                        label="Channel Group"
+                        label="频道组"
                         :disabled="$store.state.query.loading"
                       >
                         <template #selection="{ item }">
@@ -274,7 +274,7 @@
                         v-model="
                           serverInfo.virtualserver_default_channel_admin_group
                         "
-                        label="Channel Admin Group"
+                        label="频道管理员组"
                         :disabled="$store.state.query.loading"
                       >
                         <template #selection="{ item }">
@@ -287,12 +287,12 @@
                     </v-card-text>
                   </v-card>
                   <v-card class="mt-2" outlined>
-                    <v-card-subtitle>Complain</v-card-subtitle>
+                    <v-card-subtitle>投诉</v-card-subtitle>
                     <v-card-text>
                       <v-layout justify-space-between wrap>
                         <v-flex xs5 md3>
                           <v-text-field
-                            label="Autoban Count"
+                            label="自动禁言次数"
                             :disabled="$store.state.query.loading"
                             v-model="
                               serverInfo.virtualserver_complain_autoban_count
@@ -302,7 +302,7 @@
                         </v-flex>
                         <v-flex xs5 md3>
                           <v-text-field
-                            label="Autoban Time"
+                            label="自动禁言时间"
                             :disabled="$store.state.query.loading"
                             v-model="
                               serverInfo.virtualserver_complain_autoban_time
@@ -316,7 +316,7 @@
                         </v-flex>
                         <v-flex xs5 md3>
                           <v-text-field
-                            label="Remove Time"
+                            label="移除时间"
                             :disabled="$store.state.query.loading"
                             v-model="
                               serverInfo.virtualserver_complain_remove_time
@@ -334,7 +334,7 @@
                   <v-card class="my-2" outlined>
                     <v-card-text>
                       <v-text-field
-                        label="Min clients in channel before silence"
+                        label="静默前通道中的最小客户端数"
                         :disabled="$store.state.query.loading"
                         v-model="
                           serverInfo.virtualserver_min_clients_in_channel_before_forced_silence
@@ -350,7 +350,7 @@
                         type="number"
                       ></v-text-field>
                       <v-text-field
-                        label="Delete delay for temporary channel"
+                        label="临时频道删除时间"
                         :disabled="$store.state.query.loading"
                         v-model="
                           serverInfo.virtualserver_channel_temp_delete_delay_default
@@ -358,12 +358,12 @@
                         type="number"
                       ></v-text-field>
                       <v-text-field
-                        label="Phonetic Name"
+                        label="发音名称"
                         :disabled="$store.state.query.loading"
                         v-model="serverInfo.virtualserver_name_phonetic"
                       ></v-text-field>
                       <v-checkbox
-                        label="Enable reporting to serverlist"
+                        label="允许向服务器列表报告"
                         v-model="weblistEnabled"
                       ></v-checkbox>
                     </v-card-text>
@@ -374,30 +374,30 @@
                 <v-expansion-panel-header> Logs </v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <v-card class="mb-2" outlined>
-                    <v-card-subtitle>Enable Logging For</v-card-subtitle>
+                    <v-card-subtitle>启用日志记录</v-card-subtitle>
                     <v-card-text>
                       <v-checkbox
-                        label="Clients"
+                        label="客户端"
                         v-model="logClient"
                       ></v-checkbox>
                       <v-checkbox
-                        label="Channel"
+                        label="频道"
                         v-model="logChannel"
                       ></v-checkbox>
                       <v-checkbox
-                        label="Server"
+                        label="服务器"
                         v-model="logServer"
                       ></v-checkbox>
                       <v-checkbox
-                        label="ServerQuery"
+                        label="服务器查询"
                         v-model="logQuery"
                       ></v-checkbox>
                       <v-checkbox
-                        label="Permissions"
+                        label="权限"
                         v-model="logPermissions"
                       ></v-checkbox>
                       <v-checkbox
-                        label="File transfer"
+                        label="文件传输"
                         v-model="logFileTransfer"
                       ></v-checkbox>
                     </v-card-text>

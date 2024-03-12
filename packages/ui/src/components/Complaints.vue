@@ -10,7 +10,7 @@
               @click="openDialog(selected)"
             >
               <v-icon left>delete</v-icon>
-              Remove
+              删除
             </v-btn>
           </v-card-title>
           <v-card-text>
@@ -58,14 +58,14 @@
       </v-flex>
       <v-dialog v-model="dialog" max-width="500px">
         <v-card>
-          <v-card-title> Remove Complaints </v-card-title>
+          <v-card-title> 删除投诉 </v-card-title>
           <v-card-text>
-            Do you really want to remove the selected complaint(s)?
+            是否确定要删除所选投诉？
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn text color="primary" @click="dialog = false">No</v-btn>
-            <v-btn text color="primary" @click="removeComplaints">Yes</v-btn>
+            <v-btn text color="primary" @click="dialog = false">取消</v-btn>
+            <v-btn text color="primary" @click="removeComplaints">确定</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -84,15 +84,15 @@ export default {
           value: "actions",
         },
         {
-          text: "Target Nickname",
+          text: "投诉对象",
           value: "tname",
         },
         {
-          text: "From Nickname",
+          text: "投诉人",
           value: "fname",
         },
         {
-          text: "Reason",
+          text: "原因",
           value: "message",
         },
       ],
